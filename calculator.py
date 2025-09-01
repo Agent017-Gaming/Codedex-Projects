@@ -40,4 +40,3 @@ elif calculator == 5:
     print("Quited successfully")
 else:
     print("Invalid Request.")
-print("ciao!")
