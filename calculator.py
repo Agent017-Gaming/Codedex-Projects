@@ -35,7 +35,7 @@ elif calculator == 3:
 elif calculator == 4:
     radius = int(input("radius: "))
     area = pi * (radius**2)
-    print("The area is " + f"{area}")
+    print("The area is " + f"{area:.2f}")
 elif calculator == 5:
     print("Quited successfully")
 else:
