@@ -24,7 +24,7 @@ if calculator == 1:
     area = (height * base)/2
     print("The area is " + f"{area}")
 elif calculator == 2:
-    length = int(input("lenght: "))
+    length = int(input("length: "))
     width = int(input("width: "))
     area = (length * width)
     print("The area is " + f"{area}")
@@ -39,4 +39,5 @@ elif calculator == 4:
 elif calculator == 5:
     print("Quited successfully")
 else:
+
     print("Invalid Request.")
