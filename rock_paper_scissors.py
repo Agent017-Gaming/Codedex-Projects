@@ -18,6 +18,7 @@ print("3) ✌️")
 user = int(input("Pick a number: "))
 computer = randint(1, 3)
 
+#A version Loop which was Suggested my Friend Lory, Need to work on that 
 x = """
 user = 0
 
