@@ -1,15 +1,26 @@
+import os
+import numpy as np
 import imageio.v3 as iio
+from PIL import Image
 
-filenames = ['gif_final_python_project/first.png',
-    'gif_final_python_project/second.png',
-    'gif_final_python_project/third.png',
-    'gif_final_python_project/forth.png',
-    'gif_final_python_project/fifth.png',
-    'gif_final_python_project/sixth.png',
-    'gif_final_python_project/seventh.png']
+filenames = ['first.png',
+    'second.png',
+    'third.png',
+    'forth.png',
+    'fifth.png',
+    'sixth.png',
+    'seventh.png']
+
+with Image.open(filenames[0]) as im:
+    target_size = im.size
 images = [ ]
 
-for filename in filenames:
-  images.append(iio.imread(filename))
+for fname in filenames:
+  with Image.open(fname) as im:
+        im_resized = im.resize(target_size)  # resize to match first image
+        images.append(np.array(im_resized))
 
-iio.imwrite('team.gif', images, duration = 500, loop = 0)
+images = np.array(images)
+
+# Each frame 0.5s → fps=2
+iio.imwrite("team.gif", images, fps=2, loop=0)
