@@ -1,7 +1,6 @@
-import os
 import numpy as np
 import imageio.v3 as iio
-from PIL import Image
+from PIL import Image #used it for the resize of the images. gotten a bit of errors for that actually
 
 filenames = ['first.png',
     'second.png',
@@ -17,10 +16,10 @@ images = [ ]
 
 for fname in filenames:
   with Image.open(fname) as im:
-        im_resized = im.resize(target_size)  # resize to match first image
+        im_resized = im.resize(target_size)
         images.append(np.array(im_resized))
 
 images = np.array(images)
 
-# Each frame 0.5s → fps=2
+
 iio.imwrite("team.gif", images, fps=2, loop=0)
